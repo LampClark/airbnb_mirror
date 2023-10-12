@@ -1,0 +1,49 @@
+<!-- app/views/listings/new.html.erb -->
+<h1>New Listing</h1>
+
+<%= form_with(model: @listing, local: true) do |form| %>
+
+    <div class="form-group">
+        <%= form.label :title, "Title:" %>
+        <%= form.text_field :title %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :property_type, "Property type:" %>
+        <%= form.select :property_type, options_for_select(['Apartment', 'House', 'Condo', 'Townhouse']) %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :price, "Price:" %>
+        <%= form.number_field :price %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :location, "Location:" %>
+        <%= form.text_field :location %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :rooms, "Rooms:" %>
+        <%= form.number_field :rooms %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :capacity, "Capacity:" %>
+        <%= form.number_field :capacity %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :available, "Available:" %>
+        <%= form.check_box :available %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :description, "Description:" %>
+        <br>
+        <%= form.text_area :description %>
+    </div>
+    <div class="action">
+        <%= form.submit 'Create Listing' %>
+    </div>
+<% end %>

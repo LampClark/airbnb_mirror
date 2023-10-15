@@ -1,0 +1,11 @@
+<h1>Your Bookings</h1>
+
+<% @booking.each do |booking| %>
+    <div class="booking">
+        <%= link_to booking_path(booking) do %>
+            <h2>Booking: <%= booking.title %></h2>
+            <p>Check-in: <%= booking.check_in %></p>
+            <p>Check-out: <%= booking.check_out %></p>
+
+    </div>
+<% end %>

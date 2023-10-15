@@ -10,4 +10,6 @@
 
 <p><%= link_to "Edit", edit_listing_path %></p>
 
+<p><%= link_to "Create Booking", new_booking_path(listing_id: @listing.id, hello: "hello") %></p>
+
 <p><%= link_to "Back", listings_path %></p>

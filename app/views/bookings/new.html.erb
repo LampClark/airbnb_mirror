@@ -1,0 +1,32 @@
+<h1>New Booking</h1>
+
+<%= form_with(model: @booking, url: bookings_path, local: true) do |form| %>
+  <% if @booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+      <ul>
+        <% @booking.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :listing_id,value: @listing_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :check_in %>
+    <%= form.date_field :check_in %>
+  </div>
+
+  <div class="field">
+    <%= form.label :check_out %>
+    <%= form.date_field :check_out %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -3,6 +3,16 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
+
+    if params[:location].present?
+      @listings = @listings.where('location ILIKE ?', "%#{params[:location]}%")
+    end
+
+    if params[:available].present?
+      @listings = @listings.where(available: true)
+    else
+      @listings = @listings.where(available: false)
+    end
   end
 
   def show

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Homepage</title>
 </head>
 <body>
     <%= form_tag listings_path, method: :get do %>
@@ -13,7 +13,7 @@
   </div>
 
   <div class="form-group">
-    <%= label_tag :available, 'Available' %>
+    <%= label_tag 'available', 'Available' %>
     <%= check_box_tag 'available', '1', params[:available] %>
   </div>
 
@@ -21,23 +21,13 @@
 <% end %>
 
     <% if user_signed_in? %>
-    <h1>Welcome, <%= current_user.email %></h1>
+        <h1>Welcome, <%= current_user.email %></h1>
     <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
 <% else %>
     <%= link_to "Sign up", new_user_registration_path %> or
     <%= link_to "Log in", new_user_session_path %>
 <% end %>
-
-<h1>Listing</h1>
-
-<% @listings.each do |listing| %>
-    <div class="listing">
-        <h2><%= listing.title %></h2>
-        <p><%= listing.description %></p>
-        <p><%= link_to "Show", listing %></p>
-    </div>
-<% end %>
-
-<%= link_to "Create New Listing", new_listing_path %>
+<br>
+<%= link_to "Listing" , listings_path %>
 </body>
 </html>

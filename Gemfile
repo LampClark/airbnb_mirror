@@ -27,6 +27,10 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem 'ed25519', require: false
+
+gem 'bcrypt_pbkdf', require: false
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -47,18 +51,6 @@ gem "sassc-rails"
 
 gem "devise"
 
-  # Deployment
-gem 'capistrano', '< 5'
-gem 'capistrano-rvm'
-gem 'capistrano-rails'
-gem 'capistrano-bundler'
-gem 'capistrano3-puma', '< 5'
-gem 'capistrano3-nginx'
-gem 'capistrano-rails-console'
-gem 'capistrano-rails-tail-log'
-gem 'capistrano-rails-db'
-gem 'capistrano-rake', require: false
-
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -70,6 +62,18 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+
+    # Deployment
+  gem 'capistrano', '3.17.0'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-puma', '< 5'
+  gem 'capistrano3-nginx'
+  gem 'capistrano-rails-console'
+  gem 'capistrano-rails-tail-log'
+  gem 'capistrano-rails-db'
+  gem 'capistrano-rake', require: false
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"

@@ -10,8 +10,6 @@ class ListingsController < ApplicationController
 
     if params[:available].present?
       @listings = @listings.where(available: true)
-    else
-      @listings = @listings.where(available: false)
     end
   end
 
